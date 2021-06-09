@@ -42,5 +42,9 @@ function updateRecord(formData) {
     selectedRow.cells[1].innerHTML = formData.pw;
 }
 function onDelete(td) {
-    row = td.parentElement.parentElement; 
+    if(confirm('정말로 삭제하시겠습니까?')){
+        row = td.parentElement.parentElement;
+        document.getElementById("employeeList").deleteRow(row.rowIndex);
+        resetForm();
+    } 
 }
