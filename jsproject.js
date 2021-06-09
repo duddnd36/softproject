@@ -1,4 +1,3 @@
-jsproject.js
 var selectedRow = null
 
 function onFormSubmit() {
@@ -26,7 +25,7 @@ function insertNewRecord(data){
     cell3=newRow.insertCell(2);
     cell3.innerHTML = '<a onClick="onEdit(this)"><button>수정</button></a>';
     cell4=newRow.insertCell(3); 
-    cell4.innerHTML = '<button>삭제</button>';
+    cell4.innerHTML = '<a onClick="onDelete(this)"><button>삭제</button></a>';
 }
 function resetForm() {
     document.getElementById("fullname").value = "";
@@ -41,4 +40,7 @@ function onEdit(td) {
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.fullname;
     selectedRow.cells[1].innerHTML = formData.pw;
+}
+function onDelete(td) {
+    row = td.parentElement.parentElement; 
 }
