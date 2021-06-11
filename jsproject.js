@@ -5,7 +5,8 @@ function onFormSubmit() {
     var formData=readFormData();
     if (selectedRow == null)
         insertNewRecord(formData);
-        
+        else 
+        updateRecord(formData);
 
     resetForm();
 }
@@ -53,13 +54,12 @@ function check(){
         if (table[i].cells[0].innerHTML == pwkey.value){
             var pwn = document.createElement("mark");
             pwn.innerHTML = table[i].cells[0].innerHTML;
-            table[i].cells[0].append(pwn);
+            document.getElementById("exam").innerHTML =pwn.innerHTML;
             break;
         }
         else (table[i].cells[1].innerHTML == pwkey.value);{
             var pwn = document.createElement("mark");
             pwn.innerHTML = table[i].cells[1].innerHTML;
-            table[i].cells[1].append(pwn);
             break;
         
         
