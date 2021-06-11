@@ -1,11 +1,11 @@
 var selectedRow = null
-
+var table = document.getElementById("pwname").getElementsByTagName('tbody')[0].getElementsByTagName("tr");
+var pwkey = document.getElementById("pwsearch");
 function onFormSubmit() {
     var formData=readFormData();
     if (selectedRow == null)
         insertNewRecord(formData);
-        else 
-        updateRecord(formData);
+       
 
     resetForm();
 }
@@ -47,4 +47,14 @@ function onDelete(td) {
         document.getElementById("pwname").deleteRow(row.rowIndex);
         resetForm();
     } 
+}
+function check(){
+    for (var i = 0; i < 5; i++){
+        if (table[i].cells[0].innerHTML == pwkey.value){
+            var pwn = document.createElement("mark");
+            pwn.innerHTML = table[i].cells[0].innerHTML;
+            table[i].cells[0].append(pwn);
+            break;
+        }
+    }
 }
