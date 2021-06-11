@@ -58,12 +58,13 @@ function check(){
             document.getElementById("exam").innerHTML =table[i].cells[1].innerHTML;
             break;
         }
-        else (table[i].cells[1].innerHTML == pwkey.value);{
+        else if(table[i].cells[1].innerHTML == pwkey.value){
             var pwn = document.createElement("mark");
             pwn.innerHTML = table[i].cells[1].innerHTML;
+            document.getElementById("exam").innerHTML =pwn.innerHTML;
+            document.getElementById("exam").innerHTML =table[i].cells[0].innerHTML;
             break;
-        
-        
         }
+        
     }
 }
